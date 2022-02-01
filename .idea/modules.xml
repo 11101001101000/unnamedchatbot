@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/pacbot.iml" filepath="$PROJECT_DIR$/pacbot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/unnamedbot.iml" filepath="$PROJECT_DIR$/unnamedbot.iml" />
     </modules>
   </component>
 </project>

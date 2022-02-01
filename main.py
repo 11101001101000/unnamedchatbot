@@ -1,6 +1,6 @@
 feeling = 0
 kindness = 0
-print ('Hi! I am pacbot, Python Ai ChatBOT.')
+print ('Hi! I am an unnamed chatbot.')
 print ('Say anything to start conversation')
 usrmsg = input ('Say something: ')
 if str('안녕' in usrmsg) == 'True':

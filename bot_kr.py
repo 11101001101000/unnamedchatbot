@@ -19,10 +19,9 @@ while end == 0:
         kindness = kindness + 3
     # category: stop
     if str ('가야' in usrmsg) and str ('돼' in usrmsg) == 'True':
-        if str ('가야가' or '가야로' or '가야의' or '가야인' or '가야에' in usrmsg) == 'False':
-            category = category
-        category = 'stop'
-        kindness = 0
+        if str ('가야가' in usrmsg or '가야로' in usrmsg or '가야의' in usrmsg or '가야인' in usrmsg or '가야에' in usrmsg or '안돼' in usrmsg or '안 돼' in usrmsg) == 'False':
+            category = 'stop'
+            kindness = 0
     # if category is none
     if category == 0:
         category = 'unknown'

@@ -26,19 +26,26 @@ while end == 0:
     # if category is none
     if category == 0:
         category = 'unknown'
-        kindness = kindness
-        feeling = feeling -10
+        kindness = kindness - 5
+        feeling = feeling - 10
     # responses
+    feeling = feeling + kindness
     # category: greeting
     if category == 'greeting':
-        feeling = feeling + kindness
         if feeling > 0 and feeling < 5:
             botmsg = '안녕!'
-        if feeling > 5:
+        if feeling >= 5 and feeling < 15:
             botmsg = '안녕!!!'
+        if feeling >= 15:
+            botmsg = '안녕' + '!' * feeling
     # category: stop
     if category == 'stop':
-        botmsg = '알겠어.\n잘 가!'
+        if feeling >= 20:
+            botmsg = '대화 재밌었어.\n잘 가!!'
+        if feeling < 20 and feeling >= 0:
+            botmsg = '알겠어.\n잘 가!'
+        if feeling < 0:
+            botmsg = '그래'
         end = 1
     # category: unknown
     if category == 'unknown':

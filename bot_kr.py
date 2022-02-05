@@ -3,6 +3,9 @@ kindness = 0
 end = 0
 fchat = 0
 category = 0
+greeting = ''
+stop = ''
+unknown = ''
 while end == 0:
     if fchat == 0:
         # greeting
@@ -32,27 +35,27 @@ while end == 0:
     # category: greeting
     if category == 'greeting':
         if feeling > 0 and feeling < 5:
-            botmsg = '안녕!'
+            greeting = '안녕!'
         if feeling >= 5 and feeling < 15:
-            botmsg = '안녕!!!'
+            greeting = '안녕!!!'
         if feeling >= 15:
-            botmsg = '안녕' + '!' * feeling
+            greeting = '안녕' + '!' * feeling
     # category: stop
     if category == 'stop':
         if feeling >= 20:
-            botmsg = '대화 재밌었어.\n잘 가!!'
+            stop = '대화 재밌었어.\n잘 가!!'
         if feeling < 20 and feeling >= 0:
-            botmsg = '알겠어.\n잘 가!'
+            stop = '알겠어.\n잘 가!'
         if feeling < 0:
-            botmsg = '그래'
+            stop = '그래'
         end = 1
     # category: unknown
     if category == 'unknown':
         if feeling < 10:
-            botmsg = '뭐라는 거야\n난 못 알아듣겠어.'
+            unknown = '뭐라는 거야\n난 못 알아듣겠어.'
         else:
-            botmsg = '무슨 말인지 잘 못 들었어.\n이해하기 쉽게 다시 말해 줄 수 있어?'
-    print (botmsg)
+            unknown = '무슨 말인지 잘 못 들었어.\n이해하기 쉽게 다시 말해 줄 수 있어?'
+    print (str(greeting) + str(stop) + str(unknown))
     category = 0
     if fchat == 0:
         fchat = 1

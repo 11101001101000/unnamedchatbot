@@ -23,4 +23,10 @@ while end == 0:
         else:
             kindness = kindness + 1
             feeling = feeling + kindness
-            print ('안녕!')
+            if feeling >= 0:
+                print ('안녕!')
+            else:
+                print ('어 그래')
+    if str ('가야' in usrmsg and '돼' in usrmsg) == 'True':
+        if feeling > 0:
+            quit = input ('진짜 가야 돼? ')

@@ -43,3 +43,14 @@ while end == 0:
             print ('그래')
             end = 1
             exit()
+    # message: introduction
+    if str ('넌' in usrmsg and '누구' in usrmsg) == 'True':
+        kindness = kindness + 2
+        feeling = feeling + kindness
+        if feeling >= 10:
+            print ('난 네 친구 unnamedchatbot이야.')
+        else:
+            if feeling >= 0:
+                print ('나는 파이썬으로 작성된 챗봇인 unnamedchatbot이야.')
+            if feeling < 0:
+                print ('')

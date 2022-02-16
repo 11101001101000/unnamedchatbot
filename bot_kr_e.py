@@ -1,45 +1,42 @@
 feeling = 0
 kindness = 0
 end = 0
-fchat = 0
-category = 0
-greeting = ''
-stop = ''
-unknown = ''
+print ('안녕! 나는 이름없는 챗봇이야.\n대화를 시작하려면 아무 거나 말해 봐. 아, 들을 수는 없으니까 아무 말이나 써 봐.')
 while end == 0:
-    if fchat == 0:
-        # greeting
-        print ('안녕! 나는 이름없는 챗봇이야.')
-        print ('대화를 시작하려면 아무 거나 말해 봐. 아, 들을 수는 없으니까 아무 말이나 써 봐.')
+    category = ''
+    botmsg = ''
     usrmsg = input ('Say something: ')
     # user's messages
     # category: greeting
     if str ('안녕' in usrmsg) == 'True':
-        category = 'greeting'
+        category = category + 'greeting'
         kindness = kindness + 1
     if str ('안녕!' in usrmsg) == 'True':
-        category = 'greeting'
+        category = category + 'greeting'
         kindness = kindness + 3
     # category: stop
     if str ('가야' in usrmsg) and str ('돼' in usrmsg) == 'True':
         if str ('가야가' in usrmsg or '가야로' in usrmsg or '가야의' in usrmsg or '가야인' in usrmsg or '가야에' in usrmsg or '안돼' in usrmsg or '안 돼' in usrmsg) == 'False':
-            category = 'stop'
-            kindness = 0
+            category = category + 'stop'
+            kindness = kindness + 0
     # if category is none
-    if category == 0:
+    if category == '':
         category = 'unknown'
         kindness = kindness - 5
         feeling = feeling - 10
     # responses
     feeling = feeling + kindness
     # category: greeting
-    if category == 'greeting':
-        if feeling > 0 and feeling < 5:
-            greeting = '안녕!'
-        if feeling >= 5 and feeling < 15:
-            greeting = '안녕!!!'
+    if str (greeting in category) == 'True':
         if feeling >= 15:
-            greeting = '안녕' + '!' * feeling
+            botmsg = botmsg + '안녕' + '!' * feeling
+        else:
+            if feeling >= 5
+                botmsg = botmsg + '안녕!!!'
+            else:
+                if feeling > 0
+                    botmsg = botmsg + '안녕!'
+
     # category: stop
     if category == 'stop':
         if feeling >= 20:
